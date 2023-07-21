@@ -1,7 +1,7 @@
 
 ### Instructions
 
-If you wish to fork and clone the code then feel free. 
+If you wish to fork and/or clone the code then feel free. 
 
 This is a NODE project created with Vite so to run it please install node and then install all dependencies by running the following from a terminal:
 
