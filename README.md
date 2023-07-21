@@ -1,22 +1,27 @@
-# rent-my-plot
+
+Instructions
+
+If you wish to fork and clone the code then feel free. 
+
+This is a NODE project created with Vite so to run it please install node and then install all dependencies by running the following from a terminal:
+
+npm install
+npm start
 
 
-The project is built with mirage.js server, react-router 6, custom Hooks, vite, netifly continuous deployment.
+
+Fully responsive React app created with React router 6.4, Hooks UseState, UseEffect, and custom hooks.
+
+Designed to match as closely as possible to existing Figma prototype.
+
+link to figma 
 
 
-Things I could have done differently
+  <h2>Takeaways</h2>
+  <ul>
+  <li>Learned how to code to specification and also added some extra features.</li>
+<li>Used Prep to prepare logic for each React component.</li>
+<li>Designed Tests to practice React testing. </li>
+<li>Learned about the use of loaders and added a spinner to enhance the user experience</li>
+</ul>
 
-I could have used styling libraries like https://www.npmjs.com/package/react-responsive
-Material ui
-
-I could have used root styles only css to make it easier to maintain and read. 
-
-Things I learned
-
-Using React router enables my website to become an SPA
-
-
-Error handling 
-
- 
-# codesample
