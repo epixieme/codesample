@@ -45,12 +45,9 @@ export default function Plots() {
         <h1>Explore our plots </h1>
         <section className="plot-tile-container">{plotElements}</section>
         {isLoading && <Loader loading="...loading" />}
-        {error && (
-          <Error
-            error={`There was an error "${error.message}".`}
-          />
-        )}
+        {error && <Error error={`There was an error "${error.message}".`} />}
       </div>
     </section>
   );
 }
+
