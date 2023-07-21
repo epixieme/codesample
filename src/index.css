@@ -33,7 +33,8 @@ body {
   display: none;
 }
 
-/* loading spinner */
+/*** loading spinner ***/
+
 @keyframes spinner {
   0% {
     transform: rotate(0deg);
@@ -63,7 +64,7 @@ body {
   align-items: center;
   height: 350px;
 }
-
+/*** layout ***/
 
 .layout-wrapper {
   min-height: 100vh;
@@ -72,7 +73,7 @@ body {
 }
 
 
-/* navigation menu */
+/*** navigation menu ***/
 
 .nav-menu-container {
   display: flex;
@@ -110,7 +111,6 @@ body {
   color: #161616;
   text-decoration: underline;
 }
-
 
 /*** home page ***/
 
@@ -208,6 +208,7 @@ body {
 }
 
 /* all buttons inside of carousel */
+
 .carousel-buttons button {
   display: inline-block;
   text-align: center;
@@ -244,7 +245,7 @@ body {
   }
 }
 
-/*** ABOUT PAGE ***/
+/*** About Page ***/
 .about-hero-img {
   max-width: 100%;
 }
@@ -304,7 +305,6 @@ body {
 }
 
 .footer-container {
-
   background-color: #161616;
   color: #aaaaaa;
   height: 74px;
@@ -317,8 +317,7 @@ body {
 }
 
 
-
-/*** Plot PAGES ***/
+/*** Plots page ***/
 .plot-list-container {
   padding-inline: 23px
 }
@@ -332,16 +331,22 @@ body {
 
 }
 
-.plot-tile {
+.plot-list-container button {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+
+.plot-card {
   margin-bottom: 30px
 }
 
-.plot-tile a {
+.plot-card a {
   color: #161616;
   text-decoration: none;
 }
 
-.plot-tile img {
+.plot-card img {
   max-width: 100%;
   border-radius: 5px;
   width: 20rem;
@@ -349,10 +354,6 @@ body {
   object-fit: cover;
 }
 
-.plot-list-container button {
-  margin-right: 20px;
-  cursor: pointer;
-}
 
 .plot-condition {
   height: 34px;
@@ -363,8 +364,6 @@ body {
   border-radius: 5px;
   background-color: #FFEAD0;
   color: #4D4D4D;
-  transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 
 .plot-condition:hover {
@@ -375,25 +374,21 @@ body {
   outline: none;
 }
 
-.plot-condition.selected {
+.plot-condition{
   color: #FFEAD0;
 }
 
-.plot-condition.needs-love:hover {
-  background-color: #E17654;
-}
-
-.plot-condition.needs-love.selected {
+.plot-condition.needs-love {
   background-color: #dd542b;
 }
 
-.plot-condition.good-condition:hover,
-.plot-condition.good-condition.selected {
+
+.plot-condition.good-condition {
   background-color: #115E59;
 }
 
-.plot-condition.top-notch:hover,
-.plot-condition.top-notch.selected {
+
+.plot-condition.top-notch {
   background-color: #161616;
 }
 
@@ -441,16 +436,13 @@ body {
 }
 
 
-
 @media screen and (min-width: 800px) {
   .nav-menu-container .logo {
     font-size: 1.5rem;
   }
 
   .nav-links-container a {
-
     font-size: 1rem;
-
   }
 
   .nav-menu-container {
@@ -510,8 +502,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 50%;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+ 
   }
 
   .plot-condition {
@@ -519,7 +510,7 @@ body {
     align-items: center;
   }
 
-  .plot-tile-container {
+  .plot-card-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-content: center;
@@ -527,7 +518,7 @@ body {
     padding-inline: 20px;
   }
 
-  .plot-tile {
+  .plot-card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -535,11 +526,4 @@ body {
     padding-bottom: 20px;
   }
 
-  .plot-tile img {
-    max-width: 100%;
-    border-radius: 5px;
-    width: 20rem;
-    height: 20rem;
-
-  }
 }

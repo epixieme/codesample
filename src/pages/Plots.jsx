@@ -24,7 +24,7 @@ export default function Plots() {
   }, []);
 
   const plotElements = plots.map((plot) => (
-    <div key={plot.id} className="plot-tile">
+    <div key={plot.id} className="plot-card">
       <img src={plot.imageUrl} />
       <div className="plot-info">
         <h3>{plot.name[0].toUpperCase() + plot.name.substring(1)}</h3>
@@ -33,7 +33,7 @@ export default function Plots() {
           <span>/month</span>
         </p>
       </div>
-      <i className={`plot-condition ${plot.condition} selected`}>
+      <i className={`plot-condition ${plot.condition}`}>
         {plot.condition.replace("-", " ")}
       </i>
     </div>
@@ -43,7 +43,7 @@ export default function Plots() {
     <section className="plots-container" id="plotAnchor">
       <div className="plot-list">
         <h1>Explore our plots </h1>
-        <section className="plot-tile-container">{plotElements}</section>
+        <section className="plot-card-container">{plotElements}</section>
         {isLoading && <Loader loading="...loading" />}
         {error && <Error error={`There was an error "${error.message}".`} />}
       </div>
