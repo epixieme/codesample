@@ -16,7 +16,7 @@ I take immense pride in this code as it showcases my applied knowledge and exper
 
 The project is built with Vite, React Router 6.4, and various hooks like UseState, UseEffect, and custom hooks. The deployment process is streamlined through Netlify's continuous deployment.
 
-I have designed the application to closely match the existing Figma prototype, ensuring a seamless user experience and visual consistency.
+I have designed the application to closely match an existing Figma prototype, ensuring a seamless user experience and visual consistency.
 
 ## Sidenote
 The sample does not include a burger menu for mobile as I did not want to submit more code than necessary.
