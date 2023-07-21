@@ -10,7 +10,9 @@ This is a NODE project created with Vite, to run it please install node and then
 
 ## About
 
-This code sample is extracted from my ongoing project, Rent-my-plot. Although it is not yet complete, it is intended to evolve into a fully responsive full-stack application developed in React Native.
+This code sample is extracted from my ongoing project, Rent-my-plot. The project aims to make surplus and unused land available to rent to the public in order to grow produce. 
+
+Although it is not yet complete, it is intended to evolve into a fully responsive full-stack application developed in React Native.
 
 I take immense pride in this code as it showcases my applied knowledge and expertise. It emphasises my ability to error handle and create modular and maintainable code, which I believe is crucial for robust applications.
 
