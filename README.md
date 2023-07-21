@@ -18,6 +18,9 @@ The project is built with Vite, React Router 6.4, and various hooks like UseStat
 
 I have designed the application to closely match the existing Figma prototype, ensuring a seamless user experience and visual consistency.
 
+## Sidenote
+The sample does not include a burger menu for mobile as I did not want to submit more code than necessary.
+
 ## Takeaways
 
 To improve the code I would use TDD to unit test this application using a framework like Vitetest and end-to-end test with a tool like Cypress. 
