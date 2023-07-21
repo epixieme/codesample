@@ -1,9 +1,10 @@
-import { NavHashLink } from "react-router-hash-link";
 
-export default function Button({ text, anchor }) {
+import { Link } from "react-router-dom";
+
+export default function Button({text}) {
   return (
     <button>
-      <NavHashLink to={`/plots${anchor}`}>{text}</NavHashLink>
+      <Link to="/plots">{text}</Link>
     </button>
   );
 }

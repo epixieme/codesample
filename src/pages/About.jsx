@@ -26,7 +26,7 @@ export default function About() {
       <section className="about-call-to-action">
         <h2>What are you waiting for? Your plot is waiting.</h2>
         <h3>Check out our List of Rentals</h3>
-        <Button text="Explore our plots" anchor="#plotAnchor" />
+        <Button text="Explore our plots" />
       </section>
     </section>
   );
