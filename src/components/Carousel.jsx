@@ -12,29 +12,45 @@ export default function Carousel({
 }) {
   const screenWidth = useWindowWidth();
 
+  const smallScreen = () => (
+    <section className="carousel-container-elements">
+      <img src={image[currentScreen]} />
+      <p>{text[currentScreen]}</p>
+    </section>
+  );
+
+  const largeScreen = () => (
+    <section className="carousel-container-elements">
+      <img src={image[currentScreen]} />
+      <img src={image[currentScreen + 1]} />
+      <img src={image[currentScreen + 2]} />
+      <p>{text[currentScreen]}</p>
+      <p>{text[currentScreen + 1]}</p>
+      <p>{text[currentScreen + 2]}</p>
+    </section>
+  );
+
   const displaySlideScreens = () =>
-    screenWidth < 800 ? (
-      <section className="carousel-container-elements">
-        <img src={image[currentScreen]} />
-        <p>{text[currentScreen]}</p>
-      </section>
-    ) : (
-      <section className="carousel-container-elements">
-        <img src={image[currentScreen]} />
-        <img src={image[currentScreen + 1]} />
-        <img src={image[currentScreen + 2]} />
-        <p>{text[currentScreen]}</p>
-        <p>{text[currentScreen + 1]}</p>
-        <p>{text[currentScreen + 2]}</p>
-      </section>
-    );
+    screenWidth < 800 ? smallScreen() : largeScreen();
 
   return (
     <section className="carousel-container">
       {displaySlideScreens()}
       <section className="carousel-buttons">
-        <CarouselButton onClick={previous} btnText={prevText} />
-        <CarouselButton onClick={next} btnText={nextText} />
+        <CarouselButton
+          onClick={previous}
+          btnText={prevText}
+          className={currentScreen > 0 ? "visible" : "invisible"}
+        />
+        <CarouselButton
+          onClick={next}
+          btnText={nextText}
+          className={
+            displaySlideScreens() && currentScreen < image.length / 2
+              ? "visible"
+              : "invisible"
+          }
+        />
       </section>
     </section>
   );

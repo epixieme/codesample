@@ -29,6 +29,13 @@ body {
   scrollbar-width: none;
 }
 
+.invisible{
+  visibility: hidden;
+}
+
+.visible{
+  visibility: visible;
+}
 .hidden {
   display: none;
 }

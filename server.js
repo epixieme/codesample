@@ -61,7 +61,7 @@ createServer({
       description:
         "Tired plot that needs attention and would be great for producing own produce",
       imageUrl:
-        "https://i.ibb.co/FBj4pfW/sincerely-media-Agr1-YTrz-YPI-unsplash.jpg",
+        "https://i.ibb.co/VgcBCcF/close-up-vegetation-front-house.jpg",
       condition: "top-notch",
     });
   },
