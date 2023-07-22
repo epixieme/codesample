@@ -9,7 +9,7 @@ createServer({
   seeds(server) {
     server.create("plot", {
       id: "1",
-      name: "front and Back Gardens",
+      name: "Front and Back Gardens",
       price: 20,
       description:
         "Front & back garden in leafy Leckhampton, Cheltenham with a raised bed, needs some TLC. Many shrubs, trees and a chance to grown your own vegetables",
@@ -27,7 +27,7 @@ createServer({
     });
     server.create("plot", {
       id: "3",
-      name: "surplus Land",
+      name: "Surplus Land",
       price: 40,
       description:
         "Large plot of surplus land opposite a residential flat block",
@@ -37,7 +37,7 @@ createServer({
     });
     server.create("plot", {
       id: "4",
-      name: "small Garden",
+      name: "Small Garden",
       price: 20,
       description:
         "Small Garden with lots of natural light, has been rented before so in great condition",
