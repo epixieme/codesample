@@ -1,4 +1,9 @@
+import PropTypes from "prop-types";
+
 export default function Error({ error }) {
+  Error.propTypes = {
+    error: PropTypes.string,
+  };
   return (
     <section
       style={

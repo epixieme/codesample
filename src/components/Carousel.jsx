@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import useWindowWidth from "../hooks/useWindowWidth";
 import CarouselButton from "./CarouselButton";
 
@@ -10,16 +11,28 @@ export default function Carousel({
   nextText,
   currentScreen,
 }) {
-  const screenWidth = useWindowWidth();
+  Carousel.propTypes = {
+    text: PropTypes.array,
+    image: PropTypes.array,
+    previous: PropTypes.func,
+    next: PropTypes.func,
+    prevText: PropTypes.string,
+    nextText: PropTypes.string,
+    currentScreen: PropTypes.number,
+  };
 
-  const smallScreen = () => (
+  const screenWidth = useWindowWidth();
+  const mobile = screenWidth < 800;
+  const numberofScreens = image.length / 2;
+
+  const smallScreen = (
     <section className="carousel-container-elements">
       <img src={image[currentScreen]} />
       <p>{text[currentScreen]}</p>
     </section>
   );
 
-  const largeScreen = () => (
+  const largeScreen = (
     <section className="carousel-container-elements">
       <img src={image[currentScreen]} />
       <img src={image[currentScreen + 1]} />
@@ -30,12 +43,9 @@ export default function Carousel({
     </section>
   );
 
-  const displaySlideScreens = () =>
-    screenWidth < 800 ? smallScreen() : largeScreen();
-
   return (
     <section className="carousel-container">
-      {displaySlideScreens()}
+      {mobile ? smallScreen : largeScreen}
       <section className="carousel-buttons">
         <CarouselButton
           onClick={previous}
@@ -45,11 +55,7 @@ export default function Carousel({
         <CarouselButton
           onClick={next}
           btnText={nextText}
-          className={
-            displaySlideScreens() && currentScreen < image.length / 2
-              ? "visible"
-              : "invisible"
-          }
+          className={currentScreen < numberofScreens ? "visible" : "invisible"}
         />
       </section>
     </section>
