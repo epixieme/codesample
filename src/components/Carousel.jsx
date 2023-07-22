@@ -1,8 +1,9 @@
 import useCarousel from "../hooks/useCarousel";
+import Button from "./Button";
 
 import useWindowWidth from "../hooks/useWindowWidth";
 
-export default function Carousel({ text, image }) {
+export default function Carousel({ text, image, previous,next, prevText, nextText}) {
   const carousel = useCarousel();
   const screenWidth = useWindowWidth();
 
@@ -27,8 +28,8 @@ export default function Carousel({ text, image }) {
     <section className="carousel-container">
       {displaySlideScreens()}
       <section className="carousel-buttons">
-        <button onClick={carousel.previousScreen}>previousScreen</button>
-        <button onClick={carousel.nextScreen}>next screen</button>
+        <Button  onClick={previous} btnText={prevText} />
+        <Button  onClick={next} btnText={nextText}/>
       </section>
     </section>
   );

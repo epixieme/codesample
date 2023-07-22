@@ -1,10 +1,10 @@
 
 import { Link } from "react-router-dom";
 
-export default function Button({text}) {
+export default function Button({btnText}) {
   return (
     <button>
-      <Link to="/plots">{text}</Link>
+      <Link to="/plots">{btnText}</Link>
     </button>
   );
 }

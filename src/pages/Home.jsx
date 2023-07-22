@@ -4,11 +4,14 @@ import { useEffect, useState } from "react";
 import { getPlots } from "../api";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
+import useCarousel from "../hooks/useCarousel";
 
 export default function Home() {
   const [plots, setPlots] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const carousel = useCarousel();
 
   useEffect(() => {
     async function loadPlots() {
@@ -36,15 +39,20 @@ export default function Home() {
           produce?
         </h1>
         <p>Join the movement and find a plot that you can rent nearby</p>
-        <Button text={"Find your Plot"} />
+        <Button btnText={"Find your Plot"} />
       </section>
       {isLoading && <Loader loading="...loading" />}
-      {error && (
-        <Error
-          error={`There was an error "${error.message}".`}
+      {error && <Error error={`There was an error "${error.message}".`} />}
+      {!isLoading && !error && (
+        <Carousel
+          text={text}
+          image={images}
+          previous={carousel.previousScreen}
+          prevText="Previous Screen"
+          next={carousel.nextScreen}
+          nextText="Next Screen"
         />
       )}
-      {!isLoading && !error  && <Carousel text={text} image={images} />}
     </section>
   );
 }
