@@ -1,10 +1,12 @@
+import { useEffect, useState } from "react";
+
 import Button from "../components/Button";
 import Carousel from "../components/Carousel";
-import { useEffect, useState } from "react";
-import { getPlots } from "../api";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import useCarousel from "../hooks/useCarousel";
+
+import { getPlots } from "../api";
 
 export default function Home() {
   const [plots, setPlots] = useState([]);
@@ -39,7 +41,7 @@ export default function Home() {
           produce?
         </h1>
         <p>Join the movement and find a plot that you can rent nearby</p>
-        <Button btnText={"Find your Plot"} />
+        <Button btnText={"Find your Plot"} route="/plots"/>
       </section>
       {isLoading && <Loader loading="...loading" />}
       {error && <Error error={`There was an error "${error.message}".`} />}
@@ -51,6 +53,7 @@ export default function Home() {
           prevText="Previous Screen"
           next={carousel.nextScreen}
           nextText="Next Screen"
+          currentScreen={carousel.currentScreen}
         />
       )}
     </section>
