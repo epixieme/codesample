@@ -30,6 +30,11 @@ export default function Home() {
     loadPlots();
   }, []);
 
+  /// look at this code
+
+  // const firstThreePlots = plots.map(item=>[item,item,item])
+  // console.log(firstThreePlots)
+
   const text = plots.map((item) => item.name);
   const images = plots.map((item) => item.imageUrl);
   

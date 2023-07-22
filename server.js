@@ -64,6 +64,34 @@ createServer({
         "https://i.ibb.co/VgcBCcF/close-up-vegetation-front-house.jpg",
       condition: "top-notch",
     });
+    server.create("plot", {
+      id: "7",
+      name: "Front and Back Gardens",
+      price: 20,
+      description:
+        "Front & back garden in leafy Leckhampton, Cheltenham with a raised bed, needs some TLC. Many shrubs, trees and a chance to grown your own vegetables",
+      imageUrl: "https://i.ibb.co/VgcBCcF/close-up-vegetation-front-house.jpg",
+      condition: "needs-love",
+    });
+    server.create("plot", {
+      id: "8",
+      name: "Back Garden",
+      price: 30,
+      description: "Very quiet sunny back garden in London",
+      imageUrl:
+        "https://i.ibb.co/FBj4pfW/sincerely-media-Agr1-YTrz-YPI-unsplash.jpg",
+      condition: "good-condition",
+    });
+    server.create("plot", {
+      id: "9",
+      name: "Surplus Land",
+      price: 40,
+      description:
+        "Large plot of surplus land opposite a residential flat block",
+      imageUrl:
+        "https://i.ibb.co/spTkbfm/steve-adams-b-Y-q4-Vod-Uc0-unsplash.jpg",
+      condition: "top-notch",
+    });
   },
 
   routes() {

@@ -4,7 +4,7 @@ const useCarousel = () => {
   const [currentScreen, setCurrentScreen] = useState(0);
 
   function nextScreen() {
-    if (currentScreen < 3) {
+    if (currentScreen < 9) {
       setCurrentScreen(currentScreen + 1);
     }
   }

@@ -23,7 +23,10 @@ export default function Carousel({
 
   const screenWidth = useWindowWidth();
   const mobile = screenWidth < 800;
-  const numberOfScreens = image.length / 2;
+  const numberOfScreens =  mobile ? image.length -1 : image.length/2;
+  console.log(numberOfScreens)
+
+  //could have used a logical operand or .hidden or hidden class - just feels more readable below
 
   const smallScreen = (
     <section className="carousel-container-elements">
@@ -42,6 +45,9 @@ export default function Carousel({
       <p>{text[currentScreen + 2]}</p>
     </section>
   );
+
+
+  
 
   return (
     <section className="carousel-container">
