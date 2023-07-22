@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-const useCarousel = () => {
+const useCarousel = (arrayLength) => {
   const [currentScreen, setCurrentScreen] = useState(0);
 
   function nextScreen() {
-    if (currentScreen < 9) {
+    if (currentScreen < arrayLength) {
       setCurrentScreen(currentScreen + 1);
     }
   }

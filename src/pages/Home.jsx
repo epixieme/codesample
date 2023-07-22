@@ -13,7 +13,9 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const carousel = useCarousel();
+  const text = plots.map((item) => item.name);
+  const images = plots.map((item) => item.imageUrl);
+  const carousel = useCarousel(images.length);
 
   useEffect(() => {
     async function loadPlots() {
@@ -30,14 +32,6 @@ export default function Home() {
     loadPlots();
   }, []);
 
-  /// look at this code
-
-  // const firstThreePlots = plots.map(item=>[item,item,item])
-  // console.log(firstThreePlots)
-
-  const text = plots.map((item) => item.name);
-  const images = plots.map((item) => item.imageUrl);
-  
   return (
     <section>
       <section className="home-container">
