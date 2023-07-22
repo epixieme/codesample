@@ -23,7 +23,7 @@ export default function Carousel({
 
   const screenWidth = useWindowWidth();
   const mobile = screenWidth < 800;
-  const numberofScreens = image.length / 2;
+  const numberOfScreens = image.length / 2;
 
   const smallScreen = (
     <section className="carousel-container-elements">
@@ -55,7 +55,7 @@ export default function Carousel({
         <CarouselButton
           onClick={next}
           btnText={nextText}
-          className={currentScreen < numberofScreens ? "visible" : "invisible"}
+          className={currentScreen < numberOfScreens ? "visible" : "invisible"}
         />
       </section>
     </section>
