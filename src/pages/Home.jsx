@@ -32,7 +32,7 @@ export default function Home() {
 
   const text = plots.map((item) => item.name);
   const images = plots.map((item) => item.imageUrl);
-
+  
   return (
     <section>
       <section className="home-container">
