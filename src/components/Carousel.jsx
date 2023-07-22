@@ -23,7 +23,7 @@ export default function Carousel({
 
   const screenWidth = useWindowWidth();
   const mobile = screenWidth < 800;
-  const numberOfScreens = mobile ? image.length - 1 : image.length / 2;
+  const numberOfScreens = mobile ? image.length -1: image.length -3;
 
   const smallScreen = (
     <section className="carousel-container-elements">
