@@ -25,7 +25,7 @@ The sample does not include a burger menu for mobile as I did not want to submit
 
 ## Takeaways
 
-To improve the code I would use TDD to unit test this application using a framework like Vitetest and end-to-end test with a tool like Cypress. 
+To further improve the code I would unit test this application using a framework like Vitetest and end-to-end test with a tool like Cypress. Then going forward use an approach like test-driven development.
 
 
 
