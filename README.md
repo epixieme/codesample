@@ -16,7 +16,7 @@ Although it is not yet complete, it is intended to evolve into a fully responsiv
 
 I take immense pride in this code as it showcases my applied knowledge and expertise. It emphasises my ability to error handle and create modular and maintainable code, which I believe is crucial for robust applications.
 
-The project is built with Vite, React Router 6.4, and various hooks like UseState, UseEffect, and custom hooks. The deployment process is streamlined through Netlify's continuous deployment.
+The project is built with Vite, React, React Router 6.4, and various hooks like UseState, UseEffect, and custom hooks. The deployment process is streamlined through Netlify's continuous deployment.
 
 I have designed the application to closely match an existing Figma prototype, ensuring a seamless user experience and visual consistency.
 
