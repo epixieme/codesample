@@ -26,7 +26,7 @@ export default function Header() {
           to="/plots"
           style={({ isActive }) => (isActive ? activeStyles : null)}
         >
-          Your Plots
+          Our Plots
         </NavLink>
       </nav>
     </header>
