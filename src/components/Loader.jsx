@@ -5,12 +5,12 @@ export default function Loader({ loading }) {
     loading: PropTypes.string,
   };
   return (
-    <section className="Loader-container">
-      <section className="spinner-container">
-        <section className="loading-spinner">
+    <div className="Loader-container">
+      <div className="spinner-container">
+        <div className="loading-spinner">
           <h1>{loading}</h1>›
-        </section>
-      </section>
-    </section>
+        </div>
+      </div>
+    </div>
   );
 }

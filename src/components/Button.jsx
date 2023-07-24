@@ -8,10 +8,8 @@ export default function Button({ btnText, route, onClick }) {
     onClick: PropTypes.func,
   };
   return (
-   
-      <Link to={route} onClick={onClick} className="btnLink">
-       <button> {btnText}</button>
-      </Link>
-
+    <Link to={route} onClick={onClick} className="btnLink">
+      <button> {btnText}</button>
+    </Link>
   );
 }
