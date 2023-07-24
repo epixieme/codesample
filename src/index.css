@@ -145,7 +145,8 @@ body {
   line-height: 24px;
 }
 
-.home-container button {
+.home-container .btnLink button{
+  color:white;
   display: inline-block;
   text-align: center;
   background-color: #3B673A;
@@ -153,6 +154,7 @@ body {
   width: 100%;
   margin-top: 27px;
   padding-block: 0.75rem;
+  padding-inline: 3rem;
   font-weight: 700;
   border-radius: 5px;
   cursor: pointer;
@@ -289,20 +291,22 @@ body {
   font-weight: 1.5rem;
 }
 
-.about-call-to-action button {
+.about-call-to-action .btnLink button{
+  color:white;
   display: inline-block;
   text-align: center;
-  background-color: #3A673A;
-  color: white;
+  background-color: #3B673A;
   border: none;
   width: 100%;
   margin-top: 27px;
   padding-block: 0.75rem;
+  padding-inline: 3rem;
   font-weight: 700;
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.1s ease-in-out;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  transition: 0.3s;
 }
 
 
