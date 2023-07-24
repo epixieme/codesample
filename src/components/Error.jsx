@@ -5,7 +5,7 @@ export default function Error({ error }) {
     error: PropTypes.string,
   };
   return (
-    <section
+    <div
       style={
         error && {
           display: "flex",
@@ -15,6 +15,6 @@ export default function Error({ error }) {
       }
     >
       <h1>{error}</h1>
-    </section>
+    </div>
   );
 }
