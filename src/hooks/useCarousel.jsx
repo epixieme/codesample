@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 const useCarousel = (arrayLength) => {
+
+  //adds or subtracts 1
   const [currentScreen, setCurrentScreen] = useState(0);
 
   function nextScreen() {
