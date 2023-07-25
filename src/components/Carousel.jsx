@@ -22,17 +22,16 @@ export default function Carousel({
   };
 
   const screenWidth = useWindowWidth();
-  const mobile = screenWidth < 800;
-  const numberOfScreens = mobile ? image.length -1: image.length -3;
+  const isMobile = screenWidth < 800;
 
-  const smallScreen = (
+  const mobileDisplay = (
     <section className="carousel-container-elements">
       <img src={image[currentScreen]} />
       <p>{text[currentScreen]}</p>
     </section>
   );
 
-  const largeScreen = (
+  const desktopDisplay = (
     <section className="carousel-container-elements">
       <img src={image[currentScreen]} />
       <img src={image[currentScreen + 1]} />
@@ -43,9 +42,15 @@ export default function Carousel({
     </section>
   );
 
+  const numberOfScreens = () => {
+    const mobileScreenCount = image.length - 1;
+    const desktopScreenCount = image.length - 3;
+    return isMobile ? mobileScreenCount : desktopScreenCount;
+  };
+
   return (
     <section className="carousel-container">
-      {mobile ? smallScreen : largeScreen}
+      {isMobile ? mobileDisplay : desktopDisplay}
       <section className="carousel-buttons">
         <CarouselButton
           onClick={previous}
@@ -55,7 +60,9 @@ export default function Carousel({
         <CarouselButton
           onClick={next}
           btnText={nextText}
-          className={currentScreen < numberOfScreens ? "visible" : "invisible"}
+          className={
+            currentScreen < numberOfScreens() ? "visible" : "invisible"
+          }
         />
       </section>
     </section>
