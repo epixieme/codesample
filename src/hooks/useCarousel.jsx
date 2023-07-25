@@ -3,24 +3,24 @@ import { useState } from "react";
 const useCarousel = (arrayLength) => {
 
   //adds or subtracts 1
-  const [currentScreen, setCurrentScreen] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  function nextScreen() {
-    if (currentScreen < arrayLength) {
-      setCurrentScreen(currentScreen + 1);
+  function nextSlide() {
+    if (currentSlide < arrayLength) {
+      setCurrentSlide(currentSlide + 1);
     }
   }
 
-  function previousScreen() {
-    if (currentScreen > 0) {
-      setCurrentScreen(currentScreen - 1);
+  function previousSlide() {
+    if (currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1);
     }
   }
 
   return {
-    currentScreen,
-    nextScreen,
-    previousScreen,
+    currentSlide,
+    nextSlide,
+    previousSlide,
   };
 };
 

@@ -48,11 +48,11 @@ export default function Home() {
         <Carousel
           text={text}
           image={images}
-          previous={carousel.previousScreen}
-          prevText="Previous Screen"
-          next={carousel.nextScreen}
-          nextText="Next Screen"
-          currentScreen={carousel.currentScreen}
+          previous={carousel.previousSlide}
+          prevText="Previous"
+          next={carousel.nextSlide}
+          nextText="Next"
+          currentSlide={carousel.currentSlide}
         />
       )}
     </section>

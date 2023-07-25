@@ -9,7 +9,7 @@ export default function Carousel({
   next,
   prevText,
   nextText,
-  currentScreen,
+  currentSlide,
 }) {
   Carousel.propTypes = {
     text: PropTypes.array,
@@ -18,7 +18,7 @@ export default function Carousel({
     next: PropTypes.func,
     prevText: PropTypes.string,
     nextText: PropTypes.string,
-    currentScreen: PropTypes.number,
+    currentSlide: PropTypes.number,
   };
 
   const screenWidth = useWindowWidth();
@@ -26,26 +26,26 @@ export default function Carousel({
 
   const mobileDisplay = (
     <section className="carousel-container-elements">
-      <img src={image[currentScreen]} />
-      <p>{text[currentScreen]}</p>
+      <img src={image[currentSlide]} />
+      <p>{text[currentSlide]}</p>
     </section>
   );
 
   const desktopDisplay = (
     <section className="carousel-container-elements">
-      <img src={image[currentScreen]} />
-      <img src={image[currentScreen + 1]} />
-      <img src={image[currentScreen + 2]} />
-      <p>{text[currentScreen]}</p>
-      <p>{text[currentScreen + 1]}</p>
-      <p>{text[currentScreen + 2]}</p>
+      <img src={image[currentSlide]} />
+      <img src={image[currentSlide + 1]} />
+      <img src={image[currentSlide + 2]} />
+      <p>{text[currentSlide]}</p>
+      <p>{text[currentSlide + 1]}</p>
+      <p>{text[currentSlide + 2]}</p>
     </section>
   );
 
-  const numberOfScreens = () => {
-    const mobileScreenCount = image.length - 1;
-    const desktopScreenCount = image.length - 3;
-    return isMobile ? mobileScreenCount : desktopScreenCount;
+  const numberOfSlides = () => {
+    const mobileSlideCount = image.length - 1;
+    const desktopSlideCount = image.length - 3;
+    return isMobile ? mobileSlideCount : desktopSlideCount;
   };
 
   return (
@@ -55,13 +55,13 @@ export default function Carousel({
         <CarouselButton
           onClick={previous}
           btnText={prevText}
-          className={currentScreen > 0 ? "visible" : "invisible"}
+          className={currentSlide > 0 ? "visible" : "invisible"}
         />
         <CarouselButton
           onClick={next}
           btnText={nextText}
           className={
-            currentScreen < numberOfScreens() ? "visible" : "invisible"
+            currentSlide < numberOfSlides() ? "visible" : "invisible"
           }
         />
       </section>
