@@ -13,6 +13,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
+// make new array with all elements and then use a math.random
   const text = plots.map((item) => item.name);
   const images = plots.map((item) => item.imageUrl);
   const carousel = useCarousel(images.length);
@@ -52,8 +53,8 @@ export default function Home() {
           prevText="Previous"
           next={carousel.nextSlide}
           nextText="Next"
-          currentDesktopSlide={carousel.currentDesktopSlide}
-          currentMobileSlide={carousel.currentMobileSlide}
+          currentSlide={carousel.currentSlide}
+    
         />
       )}
       

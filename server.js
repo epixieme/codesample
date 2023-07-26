@@ -84,10 +84,10 @@ createServer({
     });
     server.create("plot", {
       id: "9",
-      name: "Surplus Land",
+      name: "New Land",
       price: 40,
       description:
-        "Large plot of surplus land opposite a residential flat block",
+        "Large plot of new land opposite a residential flat block",
       imageUrl:
         "https://i.ibb.co/spTkbfm/steve-adams-b-Y-q4-Vod-Uc0-unsplash.jpg",
       condition: "top-notch",
