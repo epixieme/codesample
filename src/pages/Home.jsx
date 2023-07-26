@@ -14,8 +14,9 @@ export default function Home() {
 
   const text = plots.map((item) => item.name);
   const images = plots.map((item) => item.imageUrl);
-  const carousel = useCarousel(images.length);
+  const carousel = useCarousel(images.length, 1);
 
+  // could have used useloaderdata
   useEffect(() => {
     async function loadPlots() {
       setIsLoading(true);
