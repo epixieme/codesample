@@ -1,24 +1,34 @@
 import { useState } from "react";
-
+import useWindowWidth from "./useWindowWidth";
 const useCarousel = (arrayLength) => {
 
-  //adds or subtracts 1
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentDesktopSlide, setCurrentDesktopSlide] = useState(0);
+  const [currentMobileSlide, setCurrentMobileSlide] = useState(0);
+  
+  const screenSize = useWindowWidth()
 
+  const isMobile =  screenSize < 800
+
+  /* use state dependant on screensize */
+  const screenSlide = isMobile? currentMobileSlide : currentDesktopSlide
+ 
   function nextSlide() {
-    if (currentSlide < arrayLength) {
-      setCurrentSlide(currentSlide + 1);
+    if (screenSlide  < arrayLength) {
+      setCurrentDesktopSlide(currentDesktopSlide + 3);
+      setCurrentMobileSlide(currentMobileSlide + 1);
     }
   }
 
   function previousSlide() {
-    if (currentSlide > 0) {
-      setCurrentSlide(currentSlide - 1);
+    if (screenSlide > 0) {
+      setCurrentDesktopSlide(currentDesktopSlide - 3);
+      setCurrentMobileSlide(currentMobileSlide - 1);
     }
   }
 
   return {
-    currentSlide,
+    currentDesktopSlide,
+    currentMobileSlide,
     nextSlide,
     previousSlide,
   };

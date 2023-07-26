@@ -5,8 +5,8 @@ import Carousel from "../components/Carousel";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import useCarousel from "../hooks/useCarousel";
-
 import { getPlots } from "../api";
+
 
 export default function Home() {
   const [plots, setPlots] = useState([]);
@@ -16,7 +16,7 @@ export default function Home() {
   const text = plots.map((item) => item.name);
   const images = plots.map((item) => item.imageUrl);
   const carousel = useCarousel(images.length);
-
+ 
   useEffect(() => {
     async function loadPlots() {
       setIsLoading(true);
@@ -52,9 +52,12 @@ export default function Home() {
           prevText="Previous"
           next={carousel.nextSlide}
           nextText="Next"
-          currentSlide={carousel.currentSlide}
+          currentDesktopSlide={carousel.currentDesktopSlide}
+          currentMobileSlide={carousel.currentMobileSlide}
         />
       )}
+      
+      
     </section>
   );
 }
