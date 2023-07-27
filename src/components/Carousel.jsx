@@ -48,7 +48,7 @@ export default function Carousel({
   );
 
   const slideNumber = isMobile ? currentMobileSlide : currentDesktopSlide
-  const slideLength = isMobile ? image.length -3 : image.length -3
+  const slidesLength = isMobile ? image.length -3 : image.length -3
 
   return (
     <section className="carousel-container">
@@ -62,7 +62,7 @@ export default function Carousel({
         <CarouselButton
           onClick={next}
           btnText={nextText}
-          className={slideNumber < slideLength ? "visible" : "invisible"}
+          className={slideNumber < slidesLength ? "visible" : "invisible"}
         />
       </section>
     </section>
