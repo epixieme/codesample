@@ -26,6 +26,8 @@ export default function Carousel({
   const screenWidth = useWindowWidth();
   const isMobile = screenWidth < 800;
 
+  //could have created components fpr mobileDisplay and desktopDisplay
+
   /*  index uses props for currentMobileSlide state */
   const mobileDisplay = () => {
     return (
@@ -50,9 +52,7 @@ export default function Carousel({
     );
   };
 
-  const currentSlideNumber = isMobile
-    ? currentMobileSlide
-    : currentDesktopSlide;
+  const currentSlideNumber = isMobile ? currentMobileSlide : currentDesktopSlide;
   const slidesLength = isMobile ? image.length - 3 : image.length - 3;
 
   return (
