@@ -27,7 +27,7 @@ export default function Carousel({
   const isMobile = screenWidth < 800;
  
 
-    /*  index uses props for currentSlide state */
+    /*  index uses props for currentMobileSlide state */
   const mobileDisplay = (
     <section className="carousel-container-elements">
       <img src={image[currentMobileSlide]} />
@@ -35,7 +35,7 @@ export default function Carousel({
     </section>
   );
 
-  // change to point to currentdesktopslide
+  //  index uses props for currentdesktopslide state
   const desktopDisplay = (
     <section className="carousel-container-elements">
       <img src={image[currentDesktopSlide]} />
