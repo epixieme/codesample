@@ -47,8 +47,8 @@ export default function Carousel({
     </section>
   );
 
-  const slideNumber = isMobile ? currentMobileSlide :currentDesktopSlide
-  const slideLength = isMobile? image.length -3:image.length -3
+  const slideNumber = isMobile ? currentMobileSlide : currentDesktopSlide
+  const slideLength = isMobile ? image.length -3 : image.length -3
 
   return (
     <section className="carousel-container">
