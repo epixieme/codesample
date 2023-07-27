@@ -10,7 +10,7 @@ export default function Carousel({
   prevText,
   nextText,
   currentMobileSlide,
-  currentDesktopSlide
+  currentDesktopSlide,
 }) {
   Carousel.propTypes = {
     text: PropTypes.array,
@@ -20,39 +20,44 @@ export default function Carousel({
     prevText: PropTypes.string,
     nextText: PropTypes.string,
     currentMobileSlide: PropTypes.number,
-    currentDesktopSlide:PropTypes.number
+    currentDesktopSlide: PropTypes.number,
   };
 
   const screenWidth = useWindowWidth();
   const isMobile = screenWidth < 800;
- 
 
-    /*  index uses props for currentMobileSlide state */
-  const mobileDisplay = (
-    <section className="carousel-container-elements">
-      <img src={image[currentMobileSlide]} />
-      <p>{text[currentMobileSlide]}</p>
-    </section>
-  );
+  /*  index uses props for currentMobileSlide state */
+  const mobileDisplay = () => {
+    return (
+      <section className="carousel-container-elements">
+        <img src={image[currentMobileSlide]} />
+        <p>{text[currentMobileSlide]}</p>
+      </section>
+    );
+  };
 
   //  index uses props for currentdesktopslide state
-  const desktopDisplay = (
-    <section className="carousel-container-elements">
-      <img src={image[currentDesktopSlide]} />
-      <img src={image[currentDesktopSlide + 1]} />
-      <img src={image[currentDesktopSlide + 2]} />
-      <p>{text[currentDesktopSlide]}</p>
-      <p>{text[currentDesktopSlide + 1]}</p>
-      <p>{text[currentDesktopSlide + 2]}</p>
-    </section>
-  );
+  const desktopDisplay = () => {
+    return (
+      <section className="carousel-container-elements">
+        <img src={image[currentDesktopSlide]} />
+        <img src={image[currentDesktopSlide + 1]} />
+        <img src={image[currentDesktopSlide + 2]} />
+        <p>{text[currentDesktopSlide]}</p>
+        <p>{text[currentDesktopSlide + 1]}</p>
+        <p>{text[currentDesktopSlide + 2]}</p>
+      </section>
+    );
+  };
 
-  const currentSlideNumber = isMobile ? currentMobileSlide : currentDesktopSlide
-  const slidesLength = isMobile ? image.length -3 : image.length -3
+  const currentSlideNumber = isMobile
+    ? currentMobileSlide
+    : currentDesktopSlide;
+  const slidesLength = isMobile ? image.length - 3 : image.length - 3;
 
   return (
     <section className="carousel-container">
-      {isMobile ? mobileDisplay : desktopDisplay}
+      {isMobile ? mobileDisplay() : desktopDisplay()}
       <section className="carousel-buttons">
         <CarouselButton
           onClick={previous}
@@ -62,7 +67,9 @@ export default function Carousel({
         <CarouselButton
           onClick={next}
           btnText={nextText}
-          className={currentSlideNumber < slidesLength ? "visible" : "invisible"}
+          className={
+            currentSlideNumber < slidesLength ? "visible" : "invisible"
+          }
         />
       </section>
     </section>
