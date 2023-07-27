@@ -57,7 +57,7 @@ export default function Carousel({
         <CarouselButton
           onClick={previous}
           btnText={prevText}
-          className={slideNumber > 0 ? "visible" : "invisible"}
+          className={currentSlideNumber > 0 ? "visible" : "invisible"}
         />
         <CarouselButton
           onClick={next}
