@@ -66,10 +66,10 @@ createServer({
     });
     server.create("plot", {
       id: "7",
-      name: "Front and Back Gardens",
+      name: "Unused Land",
       price: 20,
       description:
-        "Front & back garden in leafy Leckhampton, Cheltenham with a raised bed, needs some TLC. Many shrubs, trees and a chance to grown your own vegetables",
+        "Unused land, would love to see it being put to use. Needs TLC",
       imageUrl: "https://i.ibb.co/VgcBCcF/close-up-vegetation-front-house.jpg",
       condition: "needs-love",
     });

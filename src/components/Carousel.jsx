@@ -9,7 +9,8 @@ export default function Carousel({
   next,
   prevText,
   nextText,
-  currentSlide
+  currentMobileSlide,
+  currentDesktopSlide
 }) {
   Carousel.propTypes = {
     text: PropTypes.array,
@@ -18,30 +19,36 @@ export default function Carousel({
     next: PropTypes.func,
     prevText: PropTypes.string,
     nextText: PropTypes.string,
-    currentSlide: PropTypes.number,
+    currentMobileSlide: PropTypes.number,
+    currentDesktopSlide:PropTypes.number
   };
 
   const screenWidth = useWindowWidth();
   const isMobile = screenWidth < 800;
+ 
 
     /*  index uses props for currentSlide state */
   const mobileDisplay = (
     <section className="carousel-container-elements">
-      <img src={image[currentSlide]} />
-      <p>{text[currentSlide]}</p>
+      <img src={image[currentMobileSlide]} />
+      <p>{text[currentMobileSlide]}</p>
     </section>
   );
 
+  // change to point to currentdesktopslide
   const desktopDisplay = (
     <section className="carousel-container-elements">
-      <img src={image[currentSlide]} />
-      <img src={image[currentSlide + 1]} />
-      <img src={image[currentSlide + 2]} />
-      <p>{text[currentSlide]}</p>
-      <p>{text[currentSlide + 1]}</p>
-      <p>{text[currentSlide + 2]}</p>
+      <img src={image[currentDesktopSlide]} />
+      <img src={image[currentDesktopSlide + 1]} />
+      <img src={image[currentDesktopSlide + 2]} />
+      <p>{text[currentDesktopSlide]}</p>
+      <p>{text[currentDesktopSlide + 1]}</p>
+      <p>{text[currentDesktopSlide + 2]}</p>
     </section>
   );
+
+  const slideNumber = isMobile ? currentMobileSlide :currentDesktopSlide
+  const slideLength = isMobile? image.length -3:image.length -3
 
   return (
     <section className="carousel-container">
@@ -50,12 +57,12 @@ export default function Carousel({
         <CarouselButton
           onClick={previous}
           btnText={prevText}
-          className={currentSlide > 0 ? "visible" : "invisible"}
+          className={slideNumber > 0 ? "visible" : "invisible"}
         />
         <CarouselButton
           onClick={next}
           btnText={nextText}
-          className={currentSlide < image.length/3 ? "visible" : "invisible"}
+          className={slideNumber < slideLength ? "visible" : "invisible"}
         />
       </section>
     </section>

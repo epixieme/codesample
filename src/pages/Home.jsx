@@ -9,15 +9,17 @@ import { getPlots } from "../api";
 
 
 export default function Home() {
+
+
   const [plots, setPlots] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-// make new array with all elements and then use a math.random
-  const text = plots.map((item) => item.name);
-  const images = plots.map((item) => item.imageUrl);
-  const carousel = useCarousel(images.length);
- 
+
+const text = plots.map((item) => item.name);
+const images = plots.map((item) => item.imageUrl);
+const carousel = useCarousel(images.length);
+
   useEffect(() => {
     async function loadPlots() {
       setIsLoading(true);
@@ -53,7 +55,8 @@ export default function Home() {
           prevText="Previous"
           next={carousel.nextSlide}
           nextText="Next"
-          currentSlide={carousel.currentSlide}
+          currentMobileSlide={carousel.currentMobileSlide}
+          currentDesktopSlide={carousel.currentDesktopSlide}
     
         />
       )}
