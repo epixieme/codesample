@@ -1,6 +1,9 @@
 import { useState } from "react";
 
 const useCarousel = (arrayLength) => {
+
+  /* created 2 states so if isMobile it uses currentMobileSlide */
+
   const [currentMobileSlide, setCurrentMobileSlide] = useState(0);
   const [currentDesktopSlide, setCurrentDesktopSlide] = useState(0);
 
