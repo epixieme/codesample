@@ -9,8 +9,7 @@ export default function Carousel({
   next,
   prevText,
   nextText,
-  currentMobileSlide,
-  currentDesktopSlide,
+  currentSlide,
 }) {
   Carousel.propTypes = {
     text: PropTypes.array,
@@ -19,8 +18,7 @@ export default function Carousel({
     next: PropTypes.func,
     prevText: PropTypes.string,
     nextText: PropTypes.string,
-    currentMobileSlide: PropTypes.number,
-    currentDesktopSlide: PropTypes.number,
+    currentSlide: PropTypes.number,
   };
 
   const screenWidth = useWindowWidth();
@@ -32,28 +30,28 @@ export default function Carousel({
   const mobileDisplay = () => {
     return (
       <section className="carousel-container-elements">
-        <img src={image[currentMobileSlide]} />
-        <p>{text[currentMobileSlide]}</p>
+        <img src={image[currentSlide]} />
+        <p>{text[currentSlide]}</p>
       </section>
     );
   };
 
-  //  index uses props for currentdesktopslide state
+  //  index uses props for currentSlide state
   const desktopDisplay = () => {
     return (
       <section className="carousel-container-elements">
-        <img src={image[currentDesktopSlide]} />
-        <img src={image[currentDesktopSlide + 1]} />
-        <img src={image[currentDesktopSlide + 2]} />
-        <p>{text[currentDesktopSlide]}</p>
-        <p>{text[currentDesktopSlide + 1]}</p>
-        <p>{text[currentDesktopSlide + 2]}</p>
+        <img src={image[currentSlide]} />
+        <img src={image[currentSlide + 1]} />
+        <img src={image[currentSlide + 2]} />
+        <p>{text[currentSlide]}</p>
+        <p>{text[currentSlide + 1]}</p>
+        <p>{text[currentSlide + 2]}</p>
       </section>
     );
   };
 
-  const currentSlideNumber = isMobile ? currentMobileSlide : currentDesktopSlide;
-  const slidesLength = isMobile ? image.length - 3 : image.length - 3;
+  const currentSlideNumber = currentSlide
+  const slidesLength = isMobile ? image.length - 3: image.length - 3;
 
   return (
     <section className="carousel-container">

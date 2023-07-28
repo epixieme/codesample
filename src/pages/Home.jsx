@@ -7,18 +7,14 @@ import Error from "../components/Error";
 import useCarousel from "../hooks/useCarousel";
 import { getPlots } from "../api";
 
-
 export default function Home() {
-
-
   const [plots, setPlots] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-
-const text = plots.map((item) => item.name);
-const images = plots.map((item) => item.imageUrl);
-const carousel = useCarousel(images.length);
+  const text = plots.map((item) => item.name);
+  const images = plots.map((item) => item.imageUrl);
+  const carousel = useCarousel(images.length);
 
   useEffect(() => {
     async function loadPlots() {
@@ -43,7 +39,7 @@ const carousel = useCarousel(images.length);
           produce?
         </h1>
         <p>Join the movement and find a plot that you can rent nearby</p>
-        <Button btnText={"Find your Plot"} route="/plots"/>
+        <Button btnText={"Find your Plot"} route="/plots" />
       </section>
       {isLoading && <Loader loading="...loading" />}
       {error && <Error error={`There was an error "${error.message}".`} />}
@@ -55,13 +51,9 @@ const carousel = useCarousel(images.length);
           prevText="Previous"
           next={carousel.nextSlide}
           nextText="Next"
-          currentMobileSlide={carousel.currentMobileSlide}
-          currentDesktopSlide={carousel.currentDesktopSlide}
-    
+          currentSlide={carousel.currentSlide}
         />
       )}
-      
-      
     </section>
   );
 }
