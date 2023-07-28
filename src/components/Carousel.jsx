@@ -24,8 +24,6 @@ export default function Carousel({
   const screenWidth = useWindowWidth();
   const isMobile = screenWidth < 800;
 
-  //could have created components for mobileDisplay and desktopDisplay
-
   /*  index uses props for currentMobileSlide state */
   const mobileDisplay = () => {
     return (
