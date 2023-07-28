@@ -10,7 +10,7 @@ const useWindowWidth = () => {
   };
   useEffect(() => {
     window.addEventListener("resize", updateWindowWidth);
-    //cleanup, would just keep updating the state otherwise
+   //cleanup
     return () => window.removeEventListener("resize", updateWindowWidth);
   }, []);
 
